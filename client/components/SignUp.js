@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
 import GoogleLogin from 'react-google-login';
 import { loginSuccess } from '../redux/authActions';
-// import { createUser} from '../redux/userActions';
+// import { createUser } from '../redux/userActions';
 import { useHistory } from 'react-router-dom';
 import apiKey from '../../config';
 
@@ -40,14 +40,14 @@ const SignupPage = props => {
     //set "home" from zipcode entered to geocode city name
     home = data.results[0].address_components[2].long_name;
     
-    dispatch(createUser(
+    createUser(
       {
         email: email,
-        password: setPassword,
+        password: password,
         city: home,
         access: access,
       }
-    ));
+    );
     //if signup is successful, we should automatically sign in the user, then redirect to dashboard
     //if signup is unsuccessful for any reason, stay on page
     // for now, pretend we're successful

@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { manualLoginSuccess, manualLogoutSuccess } from '../redux/authActions';
 
-const auth = useSelector(state => state.auth);
+// const auth = useSelector(state => state.auth);
 
 const LoginPage = props => {
   //useDispatch = return store.dispatch
