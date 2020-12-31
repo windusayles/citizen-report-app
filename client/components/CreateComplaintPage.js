@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import { createComplaints } from '../redux/complaintsActions';
+//import useDispatch to connect to redux store.
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import apiKey from '../../config';
@@ -12,6 +13,7 @@ import apiKey from '../../config';
 // MAKE SURE TO CHECK IF LOGGED IN, AND REROUTE TO LOGIN IF NOT //
 
 const CreateComplaintPage = props => {
+   
   const dispatch = useDispatch();
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('');
@@ -39,7 +41,7 @@ const CreateComplaintPage = props => {
     //get city from zipcode entry -> look into googleapi
     let city = data.results[0].address_components[2].long_name;
 
-    //send dispatch once we have all data
+    //send dispatch once we have all the complaints to action createComplaints
     dispatch(createComplaints(
       {
         email: email,
