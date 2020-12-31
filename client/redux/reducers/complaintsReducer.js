@@ -11,27 +11,6 @@ export default (state=initialState, action) => {
         ...state,
         complaints: [...action.payload]
       }
-
-    // case SUCCESSFUL_CREATE_COMPLAINTS:
-    //   return {
-    //   }
-    // case SUCCESSFUL_DELETE_COMPLAINTS: {
-    //   const newComplaints = state.complaints.map((complaints, idx) => {
-    //     if (idx === action.payload) {
-    //       return {
-    //         ...complaints,
-    //         complaints: complaints - 1,
-    //       };
-    //     }
-    //     return market;
-    //   });
-    //   return {
-    //     ...state,
-    //     totalCards: state.totalCards - 1,
-    //     marketList: newComplaints,
-    //   };
-    // }
-
     default:
       return state;
   }

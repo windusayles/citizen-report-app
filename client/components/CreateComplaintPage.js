@@ -7,6 +7,10 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import apiKey from '../../config';
 
+
+// ON LOAD //
+// MAKE SURE TO CHECK IF LOGGED IN, AND REROUTE TO LOGIN IF NOT //
+
 const CreateComplaintPage = props => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('')

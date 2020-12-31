@@ -16,6 +16,11 @@ import {
 import { getComplaints } from '../redux/complaintsActions';
 import apiKey from '../../config';
 
+
+// ON LOAD //
+// MAKE SURE TO SEND A GET REQUEST TO GET CURRENT USER //
+
+
 const HomePage = props => {
   const dispatch = useDispatch();
 

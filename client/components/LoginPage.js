@@ -8,7 +8,10 @@ import { loginSuccess } from '../redux/authActions';
 import { Alert, Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { manualLoginSuccess, manualLogoutSuccess } from '../redux/authActions';
+
+const auth = useSelector(state => state.auth);
 
 const LoginPage = props => {
   const dispatch = useDispatch();
@@ -21,6 +24,8 @@ const LoginPage = props => {
   }
 
   const history = useHistory();
+
+  // if (auth.isLoggedIn) history.push('/');
 
   const handleClick = () => {
     dispatch()
@@ -53,12 +58,12 @@ const LoginPage = props => {
                   <Form.Control type="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} required />
                 </Form.Group>
                 <Form.Group controlId="formPassword">
-                  <Form.Label>Password</Form.Label>
+                  <Form.Label>Password:</Form.Label>
                   <Form.Control type="text" placeholder="Keep it secret, keep it safe" value={password} onChange={(event) => setPassword(event.target.value)} required />
                 </Form.Group>
                 <Button onClick={() => {
                   handleClick();
-                }}>Login!</Button>
+                }}>Login</Button>
               </Form>
             </div>
             <hr />
